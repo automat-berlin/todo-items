@@ -1,7 +1,7 @@
 import { Controller, Get, Query, Post, Body, Put, Param, Delete } from '@nestjs/common';
-import { CreateTodoItemDto } from './create-todo-item.dto';
-import { TodoItemsService } from './todo-items.service';
-import { TodoItem } from './todo-item.entity';
+import { CreateTodoItemDto } from '../dtos/create-todo-item.dto';
+import { TodoItemsService } from '../services/todo-items.service';
+import { TodoItem } from '../models/todo-item.entity';
 import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('todo-items')

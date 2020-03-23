@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TodoItem } from './todo-item.entity';
-import { CreateTodoItemDto } from './create-todo-item.dto';
+import { TodoItem } from '../models/todo-item.entity';
+import { CreateTodoItemDto } from '../dtos/create-todo-item.dto';
 
 @Injectable()
 export class TodoItemsService {
