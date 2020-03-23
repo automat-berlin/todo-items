@@ -15,7 +15,7 @@ async function bootstrap() {
   );
 
   app.useStaticAssets(join(__dirname, '..', 'public'));
-  app.setBaseViewsDir(join(__dirname, '..', 'src', 'views'));
+  app.setBaseViewsDir(join(__dirname, '..', 'src', 'app', 'views'));
   app.setViewEngine('hbs');
   app.set('view options', { layout: 'layouts/application' });
 
