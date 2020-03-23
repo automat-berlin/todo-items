@@ -20,7 +20,7 @@ export class TodoItemsController {
   }
 
   @ApiResponse({ status: 200, description: 'Show specified TodoItem information!'})
-  @ApiResponse({ status: 404, description: 'TodoItem is not found!'})
+  @ApiResponse({ status: 404, description: 'TodoItem is not found!'}) // Only for demonstration!
   @Get(':id')
   findOne(@Param('id') id: string): Promise<TodoItem> {
     return this.todoItemsService.findOne(id);
