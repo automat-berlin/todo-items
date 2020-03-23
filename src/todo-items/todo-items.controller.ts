@@ -2,11 +2,13 @@ import { Controller, Get, Query, Post, Body, Put, Param, Delete } from '@nestjs/
 import { CreateTodoItemDto } from './create-todo-item.dto';
 import { TodoItemsService } from './todo-items.service';
 import { TodoItem } from './todo-item.entity';
+import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('todo-items')
 export class TodoItemsController {
   constructor(private readonly todoItemsService: TodoItemsService) {}
 
+  @ApiResponse({ status: 201, description: 'The record has been successfully created.'})
   @Post()
   create(@Body() createTodoItemDto: CreateTodoItemDto) {
     return this.todoItemsService.create(createTodoItemDto);
@@ -17,6 +19,8 @@ export class TodoItemsController {
     return this.todoItemsService.findAll();
   }
 
+  @ApiResponse({ status: 200, description: 'Show specified TodoItem information!'})
+  @ApiResponse({ status: 404, description: 'TodoItem is not found!'})
   @Get(':id')
   findOne(@Param('id') id: string): Promise<TodoItem> {
     return this.todoItemsService.findOne(id);
