@@ -31,7 +31,7 @@ export class AppController {
   @Get('admin/todo-items')
   @Render('admin/todo-items/index')
   listTodoItems() {
-    return { message: 'Hello world!' };
+    return { todoItems: [] };
   }
 
   @Get('admin/logout')
